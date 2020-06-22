@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+    
+    local-rabbit-messages:
+        image: rabbitmq:3-management-alpine
+        container_name: rabbitmq-messages
+        ports:
+          - 5672:5672
+          - 15672:15672
+        environment:
+          RABBITMQ_DEFAULT_USER: "admin"
+          RABBITMQ_DEFAULT_PASS: "admin"
+          restart: always
+        volumes:
+          - rabbitmq-data-messages:/var/lib/rabbitmq
+
+volumes:
+    rabbitmq-data-messages:
+          
+
