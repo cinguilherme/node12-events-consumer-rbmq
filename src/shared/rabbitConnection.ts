@@ -22,6 +22,18 @@ const openChannel = async () => {
   var openConn = await getOpenConn()
   var channel = await openConn.createChannel()
 
+  await channel.assertExchange(
+    'x-messages', 'direct',
+    { durable: true })
+
+  await channel.assertQueue(
+    'message',
+    { durable: true })
+
+  await channel.assertQueue('message')
+  await channel.assertExchange('x-messages')
+  await channel.bindQueue('message', 'x-messages', 'message')
+
   process.on('exit', (code) => {
     channel.close()
     console.log('Closing rabbitmq channel')
