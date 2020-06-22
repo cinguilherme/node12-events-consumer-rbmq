@@ -2,7 +2,7 @@ class Message {
     title:string
     text:string
 
-    constructor (title, message) {
+    constructor (title:string, message:string) {
       this.text = message
       this.title = title
     }
