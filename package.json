@@ -12,6 +12,7 @@
     "start-producer": "node dist/producer.js"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.5.13",
     "@typescript-eslint/eslint-plugin": "^3.3.0",
     "@typescript-eslint/parser": "^3.3.0",
     "eslint": "^7.3.0",
