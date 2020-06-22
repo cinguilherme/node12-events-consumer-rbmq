@@ -4,10 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpileOnly --ignore-watch node_modules --no-notify src/consumer.ts",
+    "dev-consumer": "ts-node-dev --respawn --transpileOnly --ignore-watch node_modules --no-notify src/consumer.ts",
+    "dev-producer": "ts-node-dev --respawn --transpileOnly --ignore-watch node_modules --no-notify src/producer.ts",
     "test": "jest",
     "build": "tsc",
-    "start": "node dist/consumer.js"
+    "start-consumer": "node dist/consumer.js",
+    "start-producer": "node dist/producer.js"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.3.0",
